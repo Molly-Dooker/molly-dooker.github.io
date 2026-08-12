@@ -1,0 +1,266 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1120"
+  height="1160"
+  viewBox="0 0 1120 1160"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">BF16 fidelity phases as four 7 by 5 multiplier blocks</title>
+  <desc id="desc">BF16 in0 and in1 are expanded into individual sign, exponent, hidden, mantissa, and padding bits. Sign bits feed XOR, exponent bits feed addition, and four 7 by 5 grids show the multiplier invocation for fidelity phases zero through three.</desc>
+
+  <defs>
+    <pattern id="mul-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#64748b" stroke-width="1" />
+    </pattern>
+    <pattern id="zero-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#f1f5f9" />
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#cbd5e1" stroke-width="3" />
+    </pattern>
+    <style>
+      text {
+        fill: #0f172a;
+        font-family: Inter, Arial, sans-serif;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .subtitle {
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .axis-title {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .bit-label {
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .group-label {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .phase-title {
+        font-size: 23px;
+        font-weight: 700;
+      }
+      .phase-expr {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .phase-level {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .small {
+        font-size: 14px;
+      }
+      .cell {
+        stroke: #475569;
+        stroke-width: 1.5;
+      }
+      .sign-bit {
+        fill: #cffafe;
+      }
+      .exponent-bit {
+        fill: #bbf7d0;
+      }
+      .hidden-bit {
+        fill: #fda4af;
+      }
+      .mantissa-high {
+        fill: #fecdd3;
+      }
+      .mantissa-low {
+        fill: #ffedd5;
+      }
+      .padding-bit {
+        fill: #f1f5f9;
+      }
+      .group-line {
+        fill: none;
+        stroke: #334155;
+        stroke-width: 2;
+      }
+      .phase-boundary {
+        stroke: #334155;
+        stroke-width: 3;
+        stroke-dasharray: 8 6;
+      }
+      .phase-card {
+        fill: #ffffff;
+        fill-opacity: 0.82;
+        stroke: #94a3b8;
+        stroke-width: 1;
+      }
+    </style>
+  </defs>
+
+  <rect width="1120" height="1160" fill="#ffffff" />
+
+  <text class="title" x="560" y="40" text-anchor="middle">BF16 math fidelity: four 7 x 5 multiplications</text>
+  <text class="subtitle" x="560" y="70" text-anchor="middle">Every sign, exponent, hidden, mantissa, and padding bit is shown</text>
+
+  <!-- in1 bit axis: S, eight exponent bits, five high bits, then three low bits and two zero pads -->
+  <text class="axis-title" x="580" y="101" text-anchor="middle">in1 (5-bit side)</text>
+  <g aria-label="in1 bits">
+    <rect class="cell sign-bit" x="200" y="110" width="40" height="40" />
+    <text class="bit-label" x="220" y="135" text-anchor="middle">S</text>
+
+    <rect class="cell exponent-bit" x="240" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="280" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="320" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="360" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="400" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="440" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="480" y="110" width="40" height="40" />
+    <rect class="cell exponent-bit" x="520" y="110" width="40" height="40" />
+    <text class="bit-label" x="260" y="135" text-anchor="middle">e7</text>
+    <text class="bit-label" x="300" y="135" text-anchor="middle">e6</text>
+    <text class="bit-label" x="340" y="135" text-anchor="middle">e5</text>
+    <text class="bit-label" x="380" y="135" text-anchor="middle">e4</text>
+    <text class="bit-label" x="420" y="135" text-anchor="middle">e3</text>
+    <text class="bit-label" x="460" y="135" text-anchor="middle">e2</text>
+    <text class="bit-label" x="500" y="135" text-anchor="middle">e1</text>
+    <text class="bit-label" x="540" y="135" text-anchor="middle">e0</text>
+
+    <rect class="cell hidden-bit" x="560" y="110" width="40" height="40" />
+    <rect class="cell mantissa-high" x="600" y="110" width="40" height="40" />
+    <rect class="cell mantissa-high" x="640" y="110" width="40" height="40" />
+    <rect class="cell mantissa-high" x="680" y="110" width="40" height="40" />
+    <rect class="cell mantissa-high" x="720" y="110" width="40" height="40" />
+    <rect class="cell mantissa-low" x="760" y="110" width="40" height="40" />
+    <rect class="cell mantissa-low" x="800" y="110" width="40" height="40" />
+    <rect class="cell mantissa-low" x="840" y="110" width="40" height="40" />
+    <rect class="cell padding-bit" x="880" y="110" width="40" height="40" />
+    <rect class="cell padding-bit" x="920" y="110" width="40" height="40" />
+    <text class="bit-label" x="580" y="135" text-anchor="middle">1</text>
+    <text class="bit-label" x="620" y="135" text-anchor="middle">m6</text>
+    <text class="bit-label" x="660" y="135" text-anchor="middle">m5</text>
+    <text class="bit-label" x="700" y="135" text-anchor="middle">m4</text>
+    <text class="bit-label" x="740" y="135" text-anchor="middle">m3</text>
+    <text class="bit-label" x="780" y="135" text-anchor="middle">m2</text>
+    <text class="bit-label" x="820" y="135" text-anchor="middle">m1</text>
+    <text class="bit-label" x="860" y="135" text-anchor="middle">m0</text>
+    <text class="bit-label" x="900" y="135" text-anchor="middle">0</text>
+    <text class="bit-label" x="940" y="135" text-anchor="middle">0</text>
+  </g>
+
+  <path class="group-line" d="M 560 158 V 168 H 760 V 158" />
+  <text class="group-label" x="660" y="191" text-anchor="middle">high: hidden 1 + m6..m3</text>
+  <path class="group-line" d="M 760 158 V 168 H 960 V 158" />
+  <text class="group-label" x="860" y="191" text-anchor="middle">low: m2..m0 + two 0s</text>
+
+  <!-- in0 bit axis: S, eight exponent bits, seven high bits, then one low bit and six zero pads -->
+  <text class="axis-title" x="48" y="610" text-anchor="middle" transform="rotate(-90 48 610)">in0 (7-bit side)</text>
+  <g aria-label="in0 bits">
+    <rect class="cell sign-bit" x="160" y="150" width="40" height="40" />
+    <text class="bit-label" x="180" y="175" text-anchor="middle">S</text>
+
+    <rect class="cell exponent-bit" x="160" y="190" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="230" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="270" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="310" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="350" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="390" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="430" width="40" height="40" />
+    <rect class="cell exponent-bit" x="160" y="470" width="40" height="40" />
+    <text class="bit-label" x="180" y="215" text-anchor="middle">e7</text>
+    <text class="bit-label" x="180" y="255" text-anchor="middle">e6</text>
+    <text class="bit-label" x="180" y="295" text-anchor="middle">e5</text>
+    <text class="bit-label" x="180" y="335" text-anchor="middle">e4</text>
+    <text class="bit-label" x="180" y="375" text-anchor="middle">e3</text>
+    <text class="bit-label" x="180" y="415" text-anchor="middle">e2</text>
+    <text class="bit-label" x="180" y="455" text-anchor="middle">e1</text>
+    <text class="bit-label" x="180" y="495" text-anchor="middle">e0</text>
+
+    <rect class="cell hidden-bit" x="160" y="510" width="40" height="40" />
+    <rect class="cell mantissa-high" x="160" y="550" width="40" height="40" />
+    <rect class="cell mantissa-high" x="160" y="590" width="40" height="40" />
+    <rect class="cell mantissa-high" x="160" y="630" width="40" height="40" />
+    <rect class="cell mantissa-high" x="160" y="670" width="40" height="40" />
+    <rect class="cell mantissa-high" x="160" y="710" width="40" height="40" />
+    <rect class="cell mantissa-high" x="160" y="750" width="40" height="40" />
+    <rect class="cell mantissa-low" x="160" y="790" width="40" height="40" />
+    <rect class="cell padding-bit" x="160" y="830" width="40" height="40" />
+    <rect class="cell padding-bit" x="160" y="870" width="40" height="40" />
+    <rect class="cell padding-bit" x="160" y="910" width="40" height="40" />
+    <rect class="cell padding-bit" x="160" y="950" width="40" height="40" />
+    <rect class="cell padding-bit" x="160" y="990" width="40" height="40" />
+    <rect class="cell padding-bit" x="160" y="1030" width="40" height="40" />
+    <text class="bit-label" x="180" y="535" text-anchor="middle">1</text>
+    <text class="bit-label" x="180" y="575" text-anchor="middle">m6</text>
+    <text class="bit-label" x="180" y="615" text-anchor="middle">m5</text>
+    <text class="bit-label" x="180" y="655" text-anchor="middle">m4</text>
+    <text class="bit-label" x="180" y="695" text-anchor="middle">m3</text>
+    <text class="bit-label" x="180" y="735" text-anchor="middle">m2</text>
+    <text class="bit-label" x="180" y="775" text-anchor="middle">m1</text>
+    <text class="bit-label" x="180" y="815" text-anchor="middle">m0</text>
+    <text class="bit-label" x="180" y="855" text-anchor="middle">0</text>
+    <text class="bit-label" x="180" y="895" text-anchor="middle">0</text>
+    <text class="bit-label" x="180" y="935" text-anchor="middle">0</text>
+    <text class="bit-label" x="180" y="975" text-anchor="middle">0</text>
+    <text class="bit-label" x="180" y="1015" text-anchor="middle">0</text>
+    <text class="bit-label" x="180" y="1055" text-anchor="middle">0</text>
+  </g>
+
+  <!-- Sign and exponent handling -->
+  <rect x="200" y="150" width="40" height="40" rx="4" fill="#cffafe" stroke="#0e7490" stroke-width="2" />
+  <text x="220" y="175" text-anchor="middle" font-size="10" font-weight="700">XOR</text>
+
+  <rect x="240" y="190" width="320" height="320" fill="#f0fdf4" stroke="#15803d" stroke-width="2" stroke-dasharray="8 6" />
+  <rect x="320" y="310" width="160" height="80" rx="10" fill="#bbf7d0" stroke="#15803d" stroke-width="2" />
+  <text x="400" y="343" text-anchor="middle" font-size="19" font-weight="700">8-bit exponent</text>
+  <text x="400" y="372" text-anchor="middle" font-size="19" font-weight="700">add</text>
+
+  <!-- Exact 7-row by 5-column multiplier blocks -->
+  <rect x="560" y="510" width="200" height="280" fill="#fecaca" />
+  <rect x="760" y="510" width="200" height="280" fill="#fed7aa" />
+  <rect x="560" y="790" width="200" height="280" fill="#bfdbfe" />
+  <rect x="760" y="790" width="200" height="280" fill="#ddd6fe" />
+
+  <!-- BF16 has only three low in1 bits and one low in0 bit; the remaining lanes are zero padded. -->
+  <rect x="880" y="510" width="80" height="560" fill="url(#zero-hatch)" opacity="0.8" />
+  <rect x="560" y="830" width="400" height="240" fill="url(#zero-hatch)" opacity="0.8" />
+
+  <rect x="560" y="510" width="400" height="560" fill="url(#mul-grid)" stroke="#334155" stroke-width="2" />
+  <line class="phase-boundary" x1="760" y1="510" x2="760" y2="1070" />
+  <line class="phase-boundary" x1="560" y1="790" x2="960" y2="790" />
+
+  <path class="group-line" d="M 548 510 H 536 V 790 H 548" />
+  <text class="group-label" x="510" y="650" text-anchor="middle" transform="rotate(-90 510 650)">in0 high: hidden 1 + m6..m1</text>
+  <path class="group-line" d="M 548 790 H 536 V 1070 H 548" />
+  <text class="group-label" x="510" y="930" text-anchor="middle" transform="rotate(-90 510 930)">in0 low: m0 + six 0s</text>
+
+  <g aria-label="fidelity phase labels">
+    <rect class="phase-card" x="580" y="580" width="160" height="138" rx="9" />
+    <text class="phase-title" x="660" y="613" text-anchor="middle">Phase 0</text>
+    <text class="phase-expr" x="660" y="643" text-anchor="middle">in0H x in1H</text>
+    <text class="phase-level" x="660" y="672" text-anchor="middle">LoFi and higher</text>
+    <text class="small" x="660" y="700" text-anchor="middle">7 x 5 block</text>
+
+    <rect class="phase-card" x="780" y="580" width="160" height="138" rx="9" />
+    <text class="phase-title" x="860" y="613" text-anchor="middle">Phase 1</text>
+    <text class="phase-expr" x="860" y="643" text-anchor="middle">in0H x in1L</text>
+    <text class="phase-level" x="860" y="672" text-anchor="middle">HiFi2 and higher</text>
+    <text class="small" x="860" y="700" text-anchor="middle">7 x 5 block</text>
+
+    <rect class="phase-card" x="580" y="860" width="160" height="138" rx="9" />
+    <text class="phase-title" x="660" y="893" text-anchor="middle">Phase 2</text>
+    <text class="phase-expr" x="660" y="923" text-anchor="middle">in0L x in1H</text>
+    <text class="phase-level" x="660" y="952" text-anchor="middle">HiFi3 and higher</text>
+    <text class="small" x="660" y="980" text-anchor="middle">7 x 5 block</text>
+
+    <rect class="phase-card" x="780" y="860" width="160" height="138" rx="9" />
+    <text class="phase-title" x="860" y="893" text-anchor="middle">Phase 3</text>
+    <text class="phase-expr" x="860" y="923" text-anchor="middle">in0L x in1L</text>
+    <text class="phase-level" x="860" y="952" text-anchor="middle">HiFi4</text>
+    <text class="small" x="860" y="980" text-anchor="middle">7 x 5 block</text>
+  </g>
+
+  <rect x="150" y="1095" width="820" height="52" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+  <text class="group-label" x="560" y="1118" text-anchor="middle">Each phase invokes one 7 x 5 multiplier; gray cells are zero-padded BF16 lanes.</text>
+  <text class="small" x="560" y="1139" text-anchor="middle">The hidden 1 is explicit here; low fragments enter the multiplier as scaled residuals.</text>
+</svg>

@@ -1,0 +1,209 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1440"
+  height="950"
+  viewBox="0 0 1440 950"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">MVMUL visit order across eight Dst row-half blocks</title>
+  <desc id="desc">Within one fidelity phase, instructions 1 through 8 visit the top and bottom halves of output faces C0, C1, C2, and C3. Instructions 9 through 16 revisit the same eight blocks in the same order and accumulate the second face product.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#475569" />
+    </marker>
+    <style>
+      text { fill: #0f172a; font-family: Inter, Arial, sans-serif; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 20px; font-weight: 600; fill: #334155; }
+      .panel-title { font-size: 23px; font-weight: 700; }
+      .face-label { font-size: 21px; font-weight: 700; }
+      .half-label { font-size: 16px; font-weight: 700; fill: #475569; }
+      .term { font-size: 17px; font-weight: 600; }
+      .small { font-size: 16px; fill: #334155; }
+      .badge-text { fill: #ffffff; font-size: 15px; font-weight: 700; }
+      .tile-frame { fill: none; stroke: #334155; stroke-width: 4; }
+      .split { stroke: #64748b; stroke-width: 2; }
+      .face-c0 { fill: #dbeafe; }
+      .face-c1 { fill: #dcfce7; }
+      .face-c2 { fill: #fef3c7; }
+      .face-c3 { fill: #f3e8ff; }
+      .card { stroke: #64748b; stroke-width: 2; }
+      .pass-one { fill: #2563eb; }
+      .pass-two { fill: #ea580c; }
+      .arrow { fill: none; stroke: #475569; stroke-width: 3; marker-end: url(#arrow); }
+      .note { fill: #f8fafc; stroke: #64748b; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="950" fill="#ffffff" />
+  <text class="title" x="720" y="50" text-anchor="middle">MVMUL visit order within one fidelity phase</text>
+  <text class="subtitle" x="720" y="85" text-anchor="middle">Eight 8 x 16 Dst blocks are visited once, then revisited in the same order</text>
+
+  <circle class="pass-one" cx="420" cy="125" r="19" />
+  <text class="badge-text" x="420" y="131" text-anchor="middle">1</text>
+  <text class="small" x="452" y="131">First visit: instructions 1-8</text>
+  <circle class="pass-two" cx="790" cy="125" r="19" />
+  <text class="badge-text" x="790" y="131" text-anchor="middle">9</text>
+  <text class="small" x="822" y="131">Second visit: instructions 9-16</text>
+
+  <text class="panel-title" x="420" y="175" text-anchor="middle">Dst tile: four faces, two row halves per face</text>
+
+  <!-- C0 -->
+  <rect class="face-c0" x="70" y="195" width="350" height="300" />
+  <line class="split" x1="70" y1="345" x2="420" y2="345" />
+  <text class="face-label" x="95" y="225">C0</text>
+  <text class="half-label" x="245" y="225" text-anchor="middle">TOP ROWS</text>
+  <circle class="pass-one" cx="105" cy="270" r="20" />
+  <text class="badge-text" x="105" y="276" text-anchor="middle">1</text>
+  <text class="term" x="140" y="276">B0(top) @ A0</text>
+  <circle class="pass-two" cx="105" cy="315" r="20" />
+  <text class="badge-text" x="105" y="321" text-anchor="middle">9</text>
+  <text class="term" x="140" y="321">B1(top) @ A2</text>
+  <text class="half-label" x="245" y="375" text-anchor="middle">BOTTOM ROWS</text>
+  <circle class="pass-one" cx="105" cy="420" r="20" />
+  <text class="badge-text" x="105" y="426" text-anchor="middle">2</text>
+  <text class="term" x="140" y="426">B0(bottom) @ A0</text>
+  <circle class="pass-two" cx="105" cy="465" r="20" />
+  <text class="badge-text" x="105" y="471" text-anchor="middle">10</text>
+  <text class="term" x="140" y="471">B1(bottom) @ A2</text>
+
+  <!-- C1 -->
+  <rect class="face-c1" x="420" y="195" width="350" height="300" />
+  <line class="split" x1="420" y1="345" x2="770" y2="345" />
+  <text class="face-label" x="445" y="225">C1</text>
+  <text class="half-label" x="595" y="225" text-anchor="middle">TOP ROWS</text>
+  <circle class="pass-one" cx="455" cy="270" r="20" />
+  <text class="badge-text" x="455" y="276" text-anchor="middle">3</text>
+  <text class="term" x="490" y="276">B0(top) @ A1</text>
+  <circle class="pass-two" cx="455" cy="315" r="20" />
+  <text class="badge-text" x="455" y="321" text-anchor="middle">11</text>
+  <text class="term" x="490" y="321">B1(top) @ A3</text>
+  <text class="half-label" x="595" y="375" text-anchor="middle">BOTTOM ROWS</text>
+  <circle class="pass-one" cx="455" cy="420" r="20" />
+  <text class="badge-text" x="455" y="426" text-anchor="middle">4</text>
+  <text class="term" x="490" y="426">B0(bottom) @ A1</text>
+  <circle class="pass-two" cx="455" cy="465" r="20" />
+  <text class="badge-text" x="455" y="471" text-anchor="middle">12</text>
+  <text class="term" x="490" y="471">B1(bottom) @ A3</text>
+
+  <!-- C2 -->
+  <rect class="face-c2" x="70" y="495" width="350" height="300" />
+  <line class="split" x1="70" y1="645" x2="420" y2="645" />
+  <text class="face-label" x="95" y="525">C2</text>
+  <text class="half-label" x="245" y="525" text-anchor="middle">TOP ROWS</text>
+  <circle class="pass-one" cx="105" cy="570" r="20" />
+  <text class="badge-text" x="105" y="576" text-anchor="middle">5</text>
+  <text class="term" x="140" y="576">B2(top) @ A0</text>
+  <circle class="pass-two" cx="105" cy="615" r="20" />
+  <text class="badge-text" x="105" y="621" text-anchor="middle">13</text>
+  <text class="term" x="140" y="621">B3(top) @ A2</text>
+  <text class="half-label" x="245" y="675" text-anchor="middle">BOTTOM ROWS</text>
+  <circle class="pass-one" cx="105" cy="720" r="20" />
+  <text class="badge-text" x="105" y="726" text-anchor="middle">6</text>
+  <text class="term" x="140" y="726">B2(bottom) @ A0</text>
+  <circle class="pass-two" cx="105" cy="765" r="20" />
+  <text class="badge-text" x="105" y="771" text-anchor="middle">14</text>
+  <text class="term" x="140" y="771">B3(bottom) @ A2</text>
+
+  <!-- C3 -->
+  <rect class="face-c3" x="420" y="495" width="350" height="300" />
+  <line class="split" x1="420" y1="645" x2="770" y2="645" />
+  <text class="face-label" x="445" y="525">C3</text>
+  <text class="half-label" x="595" y="525" text-anchor="middle">TOP ROWS</text>
+  <circle class="pass-one" cx="455" cy="570" r="20" />
+  <text class="badge-text" x="455" y="576" text-anchor="middle">7</text>
+  <text class="term" x="490" y="576">B2(top) @ A1</text>
+  <circle class="pass-two" cx="455" cy="615" r="20" />
+  <text class="badge-text" x="455" y="621" text-anchor="middle">15</text>
+  <text class="term" x="490" y="621">B3(top) @ A3</text>
+  <text class="half-label" x="595" y="675" text-anchor="middle">BOTTOM ROWS</text>
+  <circle class="pass-one" cx="455" cy="720" r="20" />
+  <text class="badge-text" x="455" y="726" text-anchor="middle">8</text>
+  <text class="term" x="490" y="726">B2(bottom) @ A1</text>
+  <circle class="pass-two" cx="455" cy="765" r="20" />
+  <text class="badge-text" x="455" y="771" text-anchor="middle">16</text>
+  <text class="term" x="490" y="771">B3(bottom) @ A3</text>
+
+  <rect class="tile-frame" x="70" y="195" width="700" height="600" rx="8" />
+  <line class="split" x1="420" y1="195" x2="420" y2="795" />
+  <line class="split" x1="70" y1="495" x2="770" y2="495" />
+
+  <!-- Linearized visit order -->
+  <text class="panel-title" x="1100" y="175" text-anchor="middle">Spatial order (first / second visit)</text>
+
+  <rect class="card face-c0" x="835" y="195" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="222" r="18" />
+  <text class="badge-text" x="875" y="228" text-anchor="middle">1</text>
+  <text class="small" x="910" y="228">/</text>
+  <circle class="pass-two" cx="945" cy="222" r="18" />
+  <text class="badge-text" x="945" y="228" text-anchor="middle">9</text>
+  <text class="term" x="995" y="228">C0 top rows</text>
+  <path class="arrow" d="M 1100 252 L 1100 265" />
+
+  <rect class="card face-c0" x="835" y="270" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="297" r="18" />
+  <text class="badge-text" x="875" y="303" text-anchor="middle">2</text>
+  <text class="small" x="910" y="303">/</text>
+  <circle class="pass-two" cx="945" cy="297" r="18" />
+  <text class="badge-text" x="945" y="303" text-anchor="middle">10</text>
+  <text class="term" x="995" y="303">C0 bottom rows</text>
+  <path class="arrow" d="M 1100 327 L 1100 340" />
+
+  <rect class="card face-c1" x="835" y="345" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="372" r="18" />
+  <text class="badge-text" x="875" y="378" text-anchor="middle">3</text>
+  <text class="small" x="910" y="378">/</text>
+  <circle class="pass-two" cx="945" cy="372" r="18" />
+  <text class="badge-text" x="945" y="378" text-anchor="middle">11</text>
+  <text class="term" x="995" y="378">C1 top rows</text>
+  <path class="arrow" d="M 1100 402 L 1100 415" />
+
+  <rect class="card face-c1" x="835" y="420" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="447" r="18" />
+  <text class="badge-text" x="875" y="453" text-anchor="middle">4</text>
+  <text class="small" x="910" y="453">/</text>
+  <circle class="pass-two" cx="945" cy="447" r="18" />
+  <text class="badge-text" x="945" y="453" text-anchor="middle">12</text>
+  <text class="term" x="995" y="453">C1 bottom rows</text>
+  <path class="arrow" d="M 1100 477 L 1100 490" />
+
+  <rect class="card face-c2" x="835" y="495" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="522" r="18" />
+  <text class="badge-text" x="875" y="528" text-anchor="middle">5</text>
+  <text class="small" x="910" y="528">/</text>
+  <circle class="pass-two" cx="945" cy="522" r="18" />
+  <text class="badge-text" x="945" y="528" text-anchor="middle">13</text>
+  <text class="term" x="995" y="528">C2 top rows</text>
+  <path class="arrow" d="M 1100 552 L 1100 565" />
+
+  <rect class="card face-c2" x="835" y="570" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="597" r="18" />
+  <text class="badge-text" x="875" y="603" text-anchor="middle">6</text>
+  <text class="small" x="910" y="603">/</text>
+  <circle class="pass-two" cx="945" cy="597" r="18" />
+  <text class="badge-text" x="945" y="603" text-anchor="middle">14</text>
+  <text class="term" x="995" y="603">C2 bottom rows</text>
+  <path class="arrow" d="M 1100 627 L 1100 640" />
+
+  <rect class="card face-c3" x="835" y="645" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="672" r="18" />
+  <text class="badge-text" x="875" y="678" text-anchor="middle">7</text>
+  <text class="small" x="910" y="678">/</text>
+  <circle class="pass-two" cx="945" cy="672" r="18" />
+  <text class="badge-text" x="945" y="678" text-anchor="middle">15</text>
+  <text class="term" x="995" y="678">C3 top rows</text>
+  <path class="arrow" d="M 1100 702 L 1100 715" />
+
+  <rect class="card face-c3" x="835" y="720" width="530" height="55" rx="8" />
+  <circle class="pass-one" cx="875" cy="747" r="18" />
+  <text class="badge-text" x="875" y="753" text-anchor="middle">8</text>
+  <text class="small" x="910" y="753">/</text>
+  <circle class="pass-two" cx="945" cy="747" r="18" />
+  <text class="badge-text" x="945" y="753" text-anchor="middle">16</text>
+  <text class="term" x="995" y="753">C3 bottom rows</text>
+
+  <rect class="note" x="70" y="835" width="1295" height="82" rx="12" />
+  <text class="panel-title" x="718" y="870" text-anchor="middle">#1-#8 visit all blocks once; #9-#16 revisit the same blocks and add the second face product.</text>
+  <text class="small" x="718" y="900" text-anchor="middle">Higher fidelity replays this complete 16-instruction spatial walk for every phase.</text>
+</svg>
